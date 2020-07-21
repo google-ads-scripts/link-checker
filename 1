@@ -1,5 +1,4 @@
-function main() {
-  
+
 var SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1rRqb-uv_KxbmMNUZ1ib0XkQc0ce7eDJLCrEU3ziTQCY/';
 var ss = SpreadsheetApp.openByUrl(SPREADSHEET_URL);
 var sheet = ss.getSheetByName("Archive");
@@ -39,4 +38,3 @@ array.push([row.Account,row.Campaign,row["Ad group"],row["Ad ID"],row["Headline 
   
 }sheet.getRange(100,1,array.length,array[0].length).setValues(array)
   
-}
