@@ -11,7 +11,7 @@ sheet.clear();
 
 var accountIterator = AdsManagerApp.accounts()
  .withCondition('Cost > 0')
- .forDateRange("LAST_30_DAYS")
+ .forDateRange("YESTERDAY")
  .orderBy("Clicks DESC")
  .get();
   
@@ -24,7 +24,7 @@ var report = AdsApp.report(
  'SELECT AccountDescriptiveName, CampaignName,AdGroupName,Id,Headline,HeadlinePart1,HeadlinePart2,Description,Description1,Description2,ExpandedTextAdDescription2,ExpandedTextAdHeadlinePart3,Path1,Path2,CreativeFinalUrls,CreativeFinalMobileUrls,CreativeTrackingUrlTemplate, Impressions, Clicks,Cost,Conversions ' +
  'FROM AD_PERFORMANCE_REPORT ' +
  'WHERE Cost > 0 ' +
- 'LAST_30_DAYS');
+ 'YESTERDAY');
 
 var rows = report.rows();
 
